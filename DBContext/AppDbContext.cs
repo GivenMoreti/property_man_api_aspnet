@@ -7,6 +7,11 @@ namespace PropertyManApi.DBContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.UseSerialColumns(); // Tells EF Core to use SERIAL instead of IDENTITY
+        }
+
         public DbSet<Property> Properties { get; set; }
         public DbSet<Unit> Units { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
