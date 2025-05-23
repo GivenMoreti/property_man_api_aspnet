@@ -8,9 +8,11 @@ namespace PropertyManApi.Models
         public decimal RentAmount { get; set; }
         public bool IsActive { get; set; }
 
+        // Foreign key to Unit
         public int UnitId { get; set; }
         public Unit Unit { get; set; }
 
+        // Foreign key to Tenant
         public int TenantId { get; set; }
         public Tenant Tenant { get; set; }
     }

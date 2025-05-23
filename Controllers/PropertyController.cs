@@ -28,7 +28,12 @@ namespace PropertyManApi.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
-            var properties = await _appDbContext.Properties.ToListAsync();
+            // var properties = await _appDbContext.Properties.ToListAsync();
+            //this includes the units of this property
+            var properties = await _appDbContext.Properties
+            .Include(p => p.Units)
+            .ToListAsync();
+
             var propertyDtos = _mapper.Map<List<PropertyDTO>>(properties);
             return Ok(propertyDtos);
         }
@@ -37,7 +42,10 @@ namespace PropertyManApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id)
         {
-            var property = await _appDbContext.Properties.FindAsync(id);
+            var property = await _appDbContext.Properties
+        .Include(p => p.Units)
+        .FirstOrDefaultAsync(p => p.PropertyId == id);
+
             if (property == null) return NotFound();
 
             //convert found property to dto before returning it to user

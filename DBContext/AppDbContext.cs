@@ -3,10 +3,11 @@ using PropertyManApi.Models;
 
 namespace PropertyManApi.DBContext
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        //configured for postgres database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseSerialColumns(); // Tells EF Core to use SERIAL instead of IDENTITY
@@ -20,5 +21,5 @@ namespace PropertyManApi.DBContext
         public DbSet<MaintenanceRequest> MaintenanceRequests { get; set; }
         public DbSet<User> Users { get; set; }
     }
-    
+
 }

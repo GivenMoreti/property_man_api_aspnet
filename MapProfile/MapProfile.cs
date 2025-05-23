@@ -14,10 +14,22 @@ namespace PropertyManApi.MapProfile
 
             //unit mappings
             CreateMap<Unit, UnitDTO>();
-
+            CreateMap<CreateUnitDTO, Unit>();
             //Lease Mappings
             CreateMap<Lease, LeaseDTO>();
+            CreateMap<CreateLeaseDTO, Lease>();
 
+            //maintenance mappings
+            CreateMap<MaintenanceRequest, MaintenanceRequestDTO>();
+            CreateMap<CreateMaintenanceRequestDTO, MaintenanceRequest>();
+
+            //tenant mappings
+            CreateMap<Tenant, TenantDTO>();
+            CreateMap<CreateTenantDTO, Tenant>();
+
+            //user mappings
+            CreateMap<UserDTO, User>();
+            
 
             CreateMap<AddressDTO, Address>();
             CreateMap<Address, AddressDTO>();

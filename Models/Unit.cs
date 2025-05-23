@@ -9,8 +9,8 @@ namespace PropertyManApi.Models
         public int PropertyId { get; set; }
         public Property Property { get; set; }
 
-        public ICollection<Lease> Leases { get; set; }
-        public ICollection<MaintenanceRequest> MaintenanceRequests { get; set; }
+        public ICollection<Lease> Leases { get; set; } = new List<Lease>();
+        public ICollection<MaintenanceRequest> MaintenanceRequests { get; set; } = new List<MaintenanceRequest>();
     }
     
 }
