@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace PropertyManApi.Models
 {
     public class Document
@@ -10,9 +12,11 @@ namespace PropertyManApi.Models
         public int? PropertyId { get; set; }
         public Property Property { get; set; }
 
+        [ForeignKey(nameof(Lease))]
         public int? LeaseId { get; set; }
         public Lease Lease { get; set; }
 
+        [ForeignKey(nameof(Tenant))]
         public int? TenantId { get; set; }
         public Tenant Tenant { get; set; }
     }

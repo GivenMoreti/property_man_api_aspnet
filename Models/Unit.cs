@@ -6,6 +6,7 @@ namespace PropertyManApi.Models
         public string UnitNumber { get; set; }
         public decimal MonthlyRent { get; set; }
         public bool IsOccupied { get; set; }
+        
         public int PropertyId { get; set; }
         public Property Property { get; set; }
 
