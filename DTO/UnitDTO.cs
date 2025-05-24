@@ -5,7 +5,15 @@ namespace PropertyManApi.DTO
 {
 
     // Every unit belongs to a certain Property.
-    public class UnitDTO
+    public class UnitDTO : CreateUnitDTO
+    {
+        public int UnitId { get; set; }
+        public ICollection<Lease> Leases { get; set; }
+        public ICollection<MaintenanceRequest> MaintenanceRequests { get; set; }
+
+    }
+
+    public class CreateUnitDTO
     {
         [Required]
         public string UnitNumber { get; set; }
@@ -15,10 +23,5 @@ namespace PropertyManApi.DTO
         public bool IsOccupied { get; set; } = false;
         [Required]
         public int PropertyId { get; set; }
-        public ICollection<Lease> Leases { get; set; }
-        public ICollection<MaintenanceRequest> MaintenanceRequests { get; set; }
-
     }
-
-    public class CreateUnitDTO : UnitDTO;
 }

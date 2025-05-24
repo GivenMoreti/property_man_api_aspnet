@@ -1,9 +1,24 @@
 24 May 2025
+Build sequence
+1. Add serilog for advanced logging
+2. Add DBContext
+3. Add Models
+4. Add generic unit of work and repository
+
 Generic Unit of work repository
 IReposiroty and repository
 Then the unit of work
 IUnitOfWork 
 https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 
-
-
+5. Add DTOs
+Uses auto mapper to automate connection between models and DTO classes
+6. Set Endpoints 
+    Get
+    GetAll
+    Insert
+    Delete
+    Update
+7. Set Authentication and Authorization
+    -Indentity
+8. 
