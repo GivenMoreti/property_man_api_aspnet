@@ -10,7 +10,7 @@ namespace PropertyManApi.Models
         public string Description { get; set; }
         public int NumberOfUnits { get; set; }
         public PropertyType PropertyType { get; set; }
-        public ICollection<Unit> Units { get; set; } = new List<Unit>();
+        public virtual IList<Unit> Units { get; set; } = [];
         public DateTime DateAdded { get; set; } = DateTime.UtcNow;
 
     }

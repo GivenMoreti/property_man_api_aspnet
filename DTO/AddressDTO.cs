@@ -23,9 +23,6 @@ namespace PropertyManApi.DTO
         public string Street { get; set; }
     }
 
-    public class UpdateAddressDTO : CreateAddressDTO
-    {
-
-    }
+    public class UpdateAddressDTO : CreateAddressDTO;
 
 }
